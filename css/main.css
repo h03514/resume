@@ -206,4 +206,13 @@ footer .footerImg .copyright {
   font-size: 1.2em;
   margin: 0;
 }
+
+#gotop {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  font-size: 2.5em;
+  color: #FF5335;
+  cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */
