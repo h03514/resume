@@ -89,6 +89,7 @@ main #about {
 
 main #about .pack {
   margin-top: -140px;
+  padding: 30px;
 }
 
 main #about .pack h2 {
@@ -107,6 +108,10 @@ main #about .pack hr {
 main #about .pack .resume {
   padding: 20px;
   letter-spacing: 1px;
+}
+
+main #about .pack .resume p {
+  margin-bottom: 0;
 }
 
 main #skill {

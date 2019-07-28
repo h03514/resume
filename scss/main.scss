@@ -81,6 +81,7 @@ main {
         text-align: center;
         .pack {
             margin-top: -140px;
+            padding: 30px;
             h2 {
                 color: $red;
                 padding: 20px;
@@ -95,6 +96,9 @@ main {
             .resume {
                 padding: 20px;
                 letter-spacing: 1px;
+                p {
+                    margin-bottom: 0;
+                }
             }
         }
     }
