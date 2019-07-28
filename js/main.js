@@ -1,6 +1,9 @@
 (function($) {
     $(document).ready(function() {
+        $('body').on('click', '#header .home', function() {
+            $('html').animate({ scrollTop: 0 }, 'slow');
 
+        })
         $('body').on('click', '#header .about', function() {
             $('html, body').animate({ scrollTop: $('#about').offset().top }, 1000);
         })
