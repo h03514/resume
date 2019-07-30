@@ -194,6 +194,28 @@ footer {
     }
 }
 
+@media only screen and (max-width: 420px) {
+    body {
+        width: 1000px;
+    }
+    main {
+        #about {
+            height: auto;
+            padding: 230px 200px 230px 185px;
+            .pack {
+                margin-top: 0;
+            }
+        }
+        #skill {
+            height: 147vh;
+            padding: 160px;
+        }
+        #contact {
+            height: 135vh;
+        }
+    }
+}
+
 #gotop {
     position: fixed;
     right: 50px;
