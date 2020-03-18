@@ -1,22 +1,45 @@
-(function($) {
-    $(document).ready(function() {
-        $('body').on('click', '#header .home', function() {
-            $('html').animate({ scrollTop: 0 }, 'slow');
+$(document).ready(function() {
 
-        })
-        $('body').on('click', '#header .about', function() {
-            $('html, body').animate({ scrollTop: $('#about').offset().top }, 1000);
-        })
-        $('body').on('click', '#header .skill', function() {
-            $('html, body').animate({ scrollTop: $('#skill').offset().top }, 1000);
-        })
-        $('body').on('click', '#header .contact', function() {
-            $('html, body').animate({ scrollTop: $('#contact').offset().top }, 1000);
-        })
+    let date = new Date();
 
-        $('body').on('click', '#gotop', function() {
-            $('html').animate({ scrollTop: 0 }, 'slow');
-        })
+    $('#mapid').height(window.innerHeight);
 
+    let ref = {
+        url: 'https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json'
+    }
+    AjaxJson(ref, ref, masksInfo);
+
+    $('body').on('click', '#checkIdBtn', function() {
+        $('.alertText').remove();
+
+        let html = '';
+        if (!$('#inputText').val()) {
+            return;
+        }
+        if (date.getDay() == 7) {
+            html += '<div class="alertText">今天大家都可以買口罩喔!!</div>';
+            $('#nameText').append(html);
+        }
+        if ($('#inputText').val() % 2 != 0) {
+            html = '';
+            html += '<div class="alertText">你今天<span><strong>可以</strong></span>買口罩唷</div>';
+            $('#nameText').append(html);
+        }
+        if ($('#inputText').val() % 2 == 0) {
+            html = '';
+            html += '<div class="alertText">你今天<span><strong>不可以</strong></span>買口罩唷</div>';
+            $('#nameText').append(html);
+        }
+
+        setTimeout(() => {
+            $('.alertText').remove();
+        }, 3500);
     });
-})($)
+
+
+
+
+
+    masksInfo('');
+
+});
