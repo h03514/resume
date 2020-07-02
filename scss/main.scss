@@ -21,45 +21,67 @@ header {
             font-weight: 1000;
         }
     }
+
+    @media (max-width: 414px) {
+        .backBox {
+            height: 28vh;
+        }
+        .introBox {
+            top: 120px;
+            letter-spacing: 2px;
+            h1 {
+                font-size: 15px;
+            }
+            div {
+                font-size: 10px;
+            }
+        }
+    }
 }
 
 main {
-    .fas {
-        color: #666;
-    }
-    h2 {
-        font-size: 30px;
-    }
-    .mainIntro {
-        div {
-            letter-spacing: 3px;
+    .skill {
+        padding: 100px 0;
+
+        .fas {
+            color: #666;
         }
-    }
-    .toolIntro {
         h2 {
-            width: 100%;
-            text-align: center;
+            font-size: 30px;
         }
-        .icon {
-            color: #6f6df5;
-            font-size: 2.5em;
-            text-align: center;
-            .fas {
-                color: #6f6df5;
+        .mainIntro {
+            div {
+                letter-spacing: 3px;
             }
         }
-        .intro {
-            h3 {
-                margin: 10px 0;
+        .toolIntro {
+            h2 {
+                width: 100%;
                 text-align: center;
-                font-size: 22px;
+            }
+            .icon {
+                color: #6f6df5;
+                font-size: 2.5em;
+                text-align: center;
+                .fas {
+                    color: #6f6df5;
+                }
+            }
+            .intro {
+                h3 {
+                    margin: 10px 0;
+                    text-align: center;
+                    font-size: 22px;
+                }
             }
         }
     }
     .Protfolio {
+        padding: 100px 0;
         background-color: #f6f6f6;
         h2 {
             text-align: center;
+            font-size: 30px;
         }
         .protfolioImg {
             height: 250px;
@@ -73,6 +95,21 @@ main {
                 font-size: 1.4em;
                 font-weight: 1000;
                 margin: 10px 0;
+            }
+        }
+    }
+
+    @media (max-width: 414px) {
+        .skill {
+            padding: 30px 0;
+            .contentEmail {
+                padding-top: 30px;
+            }
+        }
+        .Protfolio {
+            padding: 30px 0;
+            .protf {
+                padding-bottom: 20px;
             }
         }
     }
