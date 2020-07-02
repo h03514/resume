@@ -1,45 +1,30 @@
-$(document).ready(function() {
+// Vue.component('row-componet',{
+//     props:['img'],
+//     template:'#urlImg'
+// });
 
-    let date = new Date();
+let img = {
+    props: ['img'],
+    template: '#urlImg',
+};
 
-    $('#mapid').height(window.innerHeight);
+let vm = new Vue({
+    el: '#app',
+    data: {
+        imgUrl: '../img/Computer.png',
+        protfoImg1: '../img/qve.jpg',
+        protfoImg2: '../img/map.jpg',
+        protfoImg3: '../img/weather.jpg',
+    },
+    methods: {
+        introText: function() {},
+    },
+});
 
-    let ref = {
-        url: 'https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json'
-    }
-    AjaxJson(ref, ref, masksInfo);
-
-    $('body').on('click', '#checkIdBtn', function() {
-        $('.alertText').remove();
-
-        let html = '';
-        if (!$('#inputText').val()) {
-            return;
-        }
-        if (date.getDay() == 7) {
-            html += '<div class="alertText">今天大家都可以買口罩喔!!</div>';
-            $('#nameText').append(html);
-        }
-        if ($('#inputText').val() % 2 != 0) {
-            html = '';
-            html += '<div class="alertText">你今天<span><strong>可以</strong></span>買口罩唷</div>';
-            $('#nameText').append(html);
-        }
-        if ($('#inputText').val() % 2 == 0) {
-            html = '';
-            html += '<div class="alertText">你今天<span><strong>不可以</strong></span>買口罩唷</div>';
-            $('#nameText').append(html);
-        }
-
-        setTimeout(() => {
-            $('.alertText').remove();
-        }, 3500);
-    });
-
-
-
-
-
-    masksInfo('');
-
+let typed = new Typed('.turn', {
+    strings: ['', 'Front-end Engineer', 'a SI Engineer', 'a MIS Engineer'],
+    smartBackspace: true, // Default value
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true,
 });
