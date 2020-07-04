@@ -11,7 +11,7 @@ let img = {
 let vm = new Vue({
     el: '#app',
     data: {
-        imgUrl: '../img/Computer.png',
+        imgUrl: '../img/ComputerNew.png',
         protfoImg1: '../img/qve.jpg',
         protfoImg2: '../img/map.jpg',
         protfoImg3: '../img/weather.jpg',

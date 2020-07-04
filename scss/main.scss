@@ -2,13 +2,6 @@ header {
     img {
         width: 100%;
     }
-    .backBox {
-        width: 100%;
-        height: 100vh;
-        background-color: #000;
-        opacity: 0.4;
-        position: absolute;
-    }
     .introBox {
         position: absolute;
         top: 205px;
@@ -23,9 +16,6 @@ header {
     }
 
     @media (max-width: 414px) {
-        .backBox {
-            height: 28vh;
-        }
         .introBox {
             top: 120px;
             letter-spacing: 2px;
