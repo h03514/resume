@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Jhe_Kai</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="../css/Jhe_Kai.css" />
+        <script src="js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <div class="navList">
+                    <ul>
+                        <li><a href="javascript:;" class="spotLight">JK_Store</a></li>
+                        <!-- <li><a href="javascript:;">eee</a></li> -->
+                    </ul>
+                </div>
+            </header>
+            <main>
+                <div class="box1">
+                    <li v-for="(item,index) in imgList">
+                        <img :class="fluidClass" v-bind:src="item.name" alt="" /><a
+                            class="feature-link button-cta-sm has-icon"
+                            href="http://www.marktoast.com"
+                        >
+                            Read
+                        </a>
+                    </li>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>

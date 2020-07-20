@@ -1,0 +1,26 @@
+* {
+}
+
+header {
+    .navList {
+        ul {
+            display: inline-flex;
+            height: 5.6428571429rem;
+            align-items: center;
+            li {
+                padding: 0 0.7142857143rem;
+                a {
+                    color: #000;
+                }
+            }
+            .spotLight {
+                border: 0.999px solid #333;
+                padding: 10px;
+                font-size: 1rem;
+                font-weight: 500;
+                color: #000;
+                border-radius: 4px;
+            }
+        }
+    }
+}
