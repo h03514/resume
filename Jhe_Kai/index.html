@@ -5,35 +5,84 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Jhe_Kai</title>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
         <link rel="stylesheet" href="css/common.css" />
         <link rel="stylesheet" href="../css/Jhe_Kai.css" />
-        <script src="js/vue.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     </head>
     <body>
-        <div id="app">
-            <header>
-                <div class="navList">
-                    <ul>
-                        <li><a href="javascript:;" class="spotLight">JK_Store</a></li>
-                        <!-- <li><a href="javascript:;">eee</a></li> -->
-                    </ul>
+        <header>
+            <div class="navList">
+                <ul>
+                    <li><a href="javascript:;" class="spotLight">JK_Store</a></li>
+                    <!-- <li><a href="javascript:;">eee</a></li> -->
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="box box1">
+                <li>
+                    <div class="row">
+                        <div class="">
+                            <img src="img/1.jpg" alt="" />
+                            <a class="feature-link button-cta-sm has-icon" href="http://www.marktoast.com">
+                                <span> Read </span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        <div class="textInfo">
+                            <p>
+                                Lorem, ipsum dolor.
+                            </p>
+                            <p>lorem5</p>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <div class="boxGroup row">
+                <div class="box box2 col-sm-6">
+                    <li>
+                        <div class="">
+                            <img src="img/2.jpg" alt="" />
+                            <a class="feature-link button-cta-sm has-icon" href="http://www.marktoast.com">
+                                <span> Read </span>
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="textInfo">
+                            <p>
+                                just some motion.
+                            </p>
+                            <p>versprochen wird's dieses Mal ein</p>
+                        </div>
+                    </li>
                 </div>
-            </header>
-            <main>
-                <div class="box1">
-                    <li v-for="(item,index) in imgList">
-                        <img :class="fluidClass" v-bind:src="item.name" alt="" /><a
-                            class="feature-link button-cta-sm has-icon"
-                            href="http://www.marktoast.com"
-                        >
-                            Read
+                <div class="box box3 col-sm-6">
+                    <li>
+                        <img src="img/3.jpg" alt="" />
+                        <a class="feature-link button-cta-sm has-icon" href="http://www.marktoast.com">
+                            <span> Read </span>
+                            <i class="fas fa-long-arrow-alt-right"></i>
                         </a>
                     </li>
                 </div>
-            </main>
-            <footer></footer>
-        </div>
+            </div>
+            <div class="box box4">
+                <li>
+                    <img src="img/4.jpg" alt="" />
+                    <a class="feature-link button-cta-sm has-icon" href="http://www.marktoast.com">
+                        <span> Read </span>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </li>
+            </div>
+            <hr />
+        </main>
+        <footer></footer>
         <script src="js/main.js"></script>
     </body>
 </html>
