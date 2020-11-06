@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/TCMSV_alldesc.js"></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> -->
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js'></script> -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js'></script>
+
+
+</head>
+
+<body>
+    <div id="taipeiParking" class="container" style="margin-top:50px;">
+        <div id="sel">
+            <select name="" class="form-control" v-model="current">
+                <option value="">-- 全部 --</option>
+                <option :value="item" v-for="item in locations">{{item}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" v-for="item in filterData[currentPage]">
+
+                <h4>{{item.name}}</h4>
+                <li>區別 : {{item.area}}</li>
+                <li>地址 : {{item.address}}</li>
+                <li>計時：{{item.payex}}</li>
+                <li>營業時間：{{item.serviceTime}}</li>
+                <br>
+                <!-- <pre>
+                    {{item}}
+                </pre> -->
+            </div>
+
+        </div>
+        <div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" class="{{active:currentPage == page-1}}" v-for="page in filterData.length">
+                        <a class="page-link" href="" @click.prevent="currentPage = page-1">{{page}}</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- <nav aria-label="Page navigation example">
+                <ul>
+                    <li class="page-item" v-for="page in filterData.length">
+                        <a href="" class="page-link">{{page}}</a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#taipeiParking',
+            data: {
+                data: [],
+                locations: [],
+                tpPark: [],
+                current: '',
+                currentPage: 0
+            },
+            created() {
+                const vm = this;
+                let items = [];
+                for (let i in tparking.data.park) {
+                    items.push(tparking.data.park[i]);
+                }
+                vm.locations = items;
+                vm.getUniqueList();
+                vm.getLocation();
+
+            },
+            methods: {
+                getUniqueList() {
+                    const locations = new Set();
+
+                    const vm = this;
+                    vm.locations.forEach((item, i) => {
+                        locations.add(item.area);
+                    });
+                    vm.locations = Array.from(locations);
+                },
+                getLocation() {
+                    const locations = new Set();
+
+                    const vm = this;
+
+                    for (let i in tparking) {
+                        tparking[i].park.forEach((item) => {
+                            vm.tpPark.push(item);
+                        });
+                    }
+                }
+            },
+            computed: {
+                filterData() {
+                    const vm = this;
+                    let items = [];
+                    if (vm.current != '') {
+                        items = vm.tpPark.filter((item, i) => {
+                            return item.area == vm.current;
+                        });
+                    } else {
+                        items = vm.tpPark;
+                    }
+
+                    const newData = [];
+                    items.forEach((item, i) => {
+                        if (i % 100 === 0) {
+                            newData.push([]);
+                        }
+                        const page = parseInt(i / 100);
+                        newData[page].push(item);
+                    })
+                    return newData;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,158 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta
-            name="description"
-            content="marktoast, 馬克吐司個人網站, 網站設計, 前端網頁設計, 前端網站開發, 網路工程, 馬克吐司點點點,"
-        />
-        <meta name="keywords" content="marktoast, 馬克吐司, 網站設計, 前端網頁設計, 前端網站開發, 網路工程, 馬克吐司點點點" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>MarkToast - 馬克吐司</title>
-        <link rel="stylesheet" href="css/all.min.css" />
-        <link rel="stylesheet" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" href="css/common.css" />
-        <link rel="stylesheet" href="css/main.css" />
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-        <script src="js/vue.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <header>
-                <img :src="imgUrl" alt="" />
-                <div class="introBox">
-                    <h1>I'M <span class="turn"></span></h1>
-                    <div>Welcome to Mark's personal protfolio site.</div>
-                </div>
-            </header>
-            <main>
-                <div class="skill">
-                    <div class="container">
-                        <div class="mb-20">
-                            <h2>您好！歡迎來到馬克的個人網站</h2>
-                        </div>
-                        <div class="row mainIntro">
-                            <div class="col-sm-9 text">
-                                <p>
-                                    熟悉前端工程及網路系統，並積極嘗試跨領域的技術結合，在前端技術以探究使用者體驗為出發點，規劃和開發出操作更加直覺、友善的產品，並    與時俱進搭配新技術適度的更新。
-                                </p>
-                            </br>
-                                <p>
-                                    另一項技能著重於網路系統，擅長機房規劃及公司網路建置，熟悉Cisco、HP等大廠品牌，虛擬化主機搭配VMware使用建置，以Linux系統建置軟  體主機，未來也將朝向Docker邁進以求更新技術與世界接軌。
-                                </p>
-                            </br>
-                                <p> 若您對我的介紹有興趣，歡迎與我聯絡，一定不失您所望。</p>
-                            </div>
-                            <div class="col-sm-3 contentEmail">
-                                <p class="mb-10"><i class="fas fa-at"></i>&nbsp; 台灣，台北市</p>
-                                <p class="mb-10"><i class="fas fa-mobile-alt"></i>&nbsp; </p>
-                                <p class="mb-10"><i class="fas fa-envelope"></i>&nbsp; h03514@gmail.com</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="toolIntro row mt-20">
-                            <h2 class="mb-50">擅長工具</h2>
-                            <div class="col-sm-4 mb-20">
-                                <div class="icon"><i class="fas fa-code"></i></div>
-                                <div class="intro">
-                                    <h3>HTML/CSS</h3>
-                                    <p>以流行的響應式網站作為基礎針對不同的畫面解析度各有不同的呈現方式</p>
-                                </div>
 
-                            </div>
-                            <div class="col-sm-4 mb-20">
-                                <div class="icon"><i class="fab fa-node-js"></i></div>
-                                <div class="intro">
-                                    <h3>Javascript</h3>
-                                    <p>當代最潮的前端工程語言，快速的製作出美麗的網站作品</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 mb-20">
-                                <div class="icon"><i class="fab fa-vuejs"></i></div>
-                                <div class="intro">
-                                    <h3>VueJs</h3>
-                                    <p>前端三大主流框架之一對他的看好性日漸升高</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 mb-20">
-                                <div class="icon"><i class="fas fa-fire-alt"></i></div>
-                                <div class="intro">
-                                    <h3>Firewall</h3>
-                                    <p>防火牆控管，保護您的公司讓內部機密不會有來路不明的駭客隨意進入參觀，也可讓授權的使用者從外部連線回來作業</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 mb-20">
-                                <div class="icon"><i class="fas fa-server"></i></div>
-                                <div class="intro">
-                                    <h3>主機建置/維運</h3>
-                                    <p>從Linux到Windows主機都可以掌握，讓各個系統可以穩定維持運行</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 mb-20">
-                                <div class="icon"><i class="fas fa-network-wired"></i></div>
-                                <div class="intro">
-                                    <h3>網路規劃建置</h3>
-                                    <p>配合公司規模大小建立適合的網路結構及終端設備使用網路，讓整間公司網路順利不卡卡</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="marktoast, 馬克吐司個人網站, 網站設計, 前端網頁設計, 前端網站開發, 網路工程, 馬克吐司點點點," />
+    <meta name="keywords" content="marktoast, 馬克吐司, 網站設計, 前端網頁設計, 前端網站開發, 網路工程, 馬克吐司點點點" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MarkToast - 馬克吐司</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <img :src="imgUrl" alt="" />
+            <div class="introBox">
+                <h1>I'M <span class="turn"></span></h1>
+                <div>Welcome to Mark's personal protfolio site.</div>
+            </div>
+        </header>
+        <main>
+            <div class="skill">
+                <div class="container">
+                    <div class="mb-20">
+                        <h2>您好！歡迎來到馬克的個人網站</h2>
                     </div>
-                </div>
-                <div class="Protfolio">
-                    <div class="container">
-                        <div class="mb-20">
-                            <h2>Mark的作品</h2>
+                    <div class="row mainIntro">
+                        <div class="col-sm-9 text">
+                            <p>
+                                熟悉前端工程及網路系統，並積極嘗試跨領域的技術結合，在前端技術以探究使用者體驗為出發點，規劃和開發出操作更加直覺、友善的產品，並 與時俱進搭配新技術適度的更新。
+                            </p>
+                            </br>
+                            <p>
+                                另一項技能著重於網路系統，擅長機房規劃及公司網路建置，熟悉Cisco、HP等大廠品牌，虛擬化主機搭配VMware使用建置，以Linux系統建置軟 體主機，未來也將朝向Docker邁進以求更新技術與世界接軌。
+                            </p>
+                            </br>
+                            <p> 若您對我的介紹有興趣，歡迎與我聯絡，一定不失您所望。</p>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-4 protf">
-                                <a href="http://www.qve.com.tw" target="_blank">
-                                    <div class="protfolioImg">
-                                        <img :src="protfoImg1" alt="" />
-                                    </div>
-                                </a>
-                                <div class="protfolioIntro">
-                                    <p class="title">廣越企業股份有限公司</p>
-                                    <p>全端設計及資料庫建置</p>
-                                    <p>使用工具: javascript、C#、MariaDB</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 protf">
-                                <a href="masksmap/index.html" target="_blank">
-                                    <div class="protfolioImg">
-                                        <img :src="protfoImg2" alt="" />
-                                    </div>
-                                </a>
-                                <div class="protfolioIntro">
-                                    <p class="title">口罩地圖</p>
-                                    <p>政府開放平台提供API於每十分鐘更新口罩資訊</p>
-                                    <p>使用工具: JQuery、SCSS</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 protf">
-                                <a href="forecast_weather/index.html" target="_blank">
-                                    <div class="protfolioImg">
-                                        <img :src="protfoImg3" alt="" />
-                                    </div>
-                                </a>
-                                <div class="protfolioIntro">
-                                    <p class="title">台灣氣象預報</p>
-                                    <p>政府開放平台提供API於每日更新氣象溫度</p>
-                                    <p>使用工具: JQuery、SCSS</p>
-                                </div>
-                            </div>
+                        <div class="col-sm-3 contentEmail">
+                            <p class="mb-10"><i class="fas fa-at"></i>&nbsp; 台灣，台北市</p>
+                            <p class="mb-10"><i class="fas fa-mobile-alt"></i>&nbsp; </p>
+                            <p class="mb-10"><i class="fas fa-envelope"></i>&nbsp; h03514@gmail.com</p>
                         </div>
-                        
                     </div>
+                    <hr>
+                    <div class="toolIntro row mt-20">
+                        <h2 class="mb-50">擅長工具</h2>
+                        <div class="col-sm-4 mb-20">
+                            <div class="icon"><i class="fas fa-code"></i></div>
+                            <div class="intro">
+                                <h3>HTML/CSS</h3>
+                                <p>以流行的響應式網站作為基礎針對不同的畫面解析度各有不同的呈現方式</p>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 mb-20">
+                            <div class="icon"><i class="fab fa-node-js"></i></div>
+                            <div class="intro">
+                                <h3>Javascript</h3>
+                                <p>當代最潮的前端工程語言，快速的製作出美麗的網站作品</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-20">
+                            <div class="icon"><i class="fab fa-vuejs"></i></div>
+                            <div class="intro">
+                                <h3>VueJs</h3>
+                                <p>前端三大主流框架之一對他的看好性日漸升高</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-20">
+                            <div class="icon"><i class="fas fa-fire-alt"></i></div>
+                            <div class="intro">
+                                <h3>Firewall</h3>
+                                <p>防火牆控管，保護您的公司讓內部機密不會有來路不明的駭客隨意進入參觀，也可讓授權的使用者從外部連線回來作業</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-20">
+                            <div class="icon"><i class="fas fa-server"></i></div>
+                            <div class="intro">
+                                <h3>主機建置/維運</h3>
+                                <p>從Linux到Windows主機都可以掌握，讓各個系統可以穩定維持運行</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mb-20">
+                            <div class="icon"><i class="fas fa-network-wired"></i></div>
+                            <div class="intro">
+                                <h3>網路規劃建置</h3>
+                                <p>配合公司規模大小建立適合的網路結構及終端設備使用網路，讓整間公司網路順利不卡卡</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
                 </div>
-            </main>
-            <footer>
-                <h3>馬克未來有限公司 COPYRIGHT ©2020</h3>
-            </footer>
-        </div>
-        
-        <script src="js/main.js"></script>
-    </body>
+            </div>
+            <div class="Protfolio">
+                <div class="container">
+                    <div class="mb-20">
+                        <h2>Mark的作品</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 protf">
+                            <a href="http://www.qve.com.tw" target="_blank">
+                                <div class="protfolioImg">
+                                    <img :src="protfoImg1" alt="" />
+                                </div>
+                            </a>
+                            <div class="protfolioIntro">
+                                <p class="title">廣越企業股份有限公司</p>
+                                <p>全端設計及資料庫建置</p>
+                                <p>使用工具: javascript、C#、MariaDB</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 protf">
+                            <a href="taipeiparking/index.html" target="_blank">
+                                <div class="protfolioImg">
+                                    <img :src="protfoImg4" alt="" />
+                                </div>
+                            </a>
+                            <div class="protfolioIntro">
+                                <p class="title">台北市停車場</p>
+                                <p>政府開放平台提供API於台北市停車場</p>
+                                <p>使用工具: VUE</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 protf">
+                            <a href="masksmap/index.html" target="_blank">
+                                <div class="protfolioImg">
+                                    <img :src="protfoImg2" alt="" />
+                                </div>
+                            </a>
+                            <div class="protfolioIntro">
+                                <p class="title">口罩地圖</p>
+                                <p>政府開放平台提供API於每十分鐘更新口罩資訊</p>
+                                <p>使用工具: JQuery、SCSS</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 protf">
+                            <a href="forecast_weather/index.html" target="_blank">
+                                <div class="protfolioImg">
+                                    <img :src="protfoImg3" alt="" />
+                                </div>
+                            </a>
+                            <div class="protfolioIntro">
+                                <p class="title">台灣氣象預報</p>
+                                <p>政府開放平台提供API於每日更新氣象溫度</p>
+                                <p>使用工具: JQuery、SCSS</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h3>馬克未來有限公司 COPYRIGHT ©2020</h3>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
 </html>
