@@ -10,30 +10,33 @@
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> -->
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js'></script> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js'></script>
 
-
 </head>
 
 <body>
-    <div id="taipeiParking" class="container" style="margin-top:50px;">
-        <div id="sel">
-            <select name="" class="form-control" v-model="current">
+    <div id="taipeiParking" class="container">
+        <div class="header">
+            <div id="sel">
+                <select name="" class="form-control" v-model="current">
                 <option value="">-- 全部 --</option>
-                <option :value="item" v-for="item in locations">{{item}}</option>
+                <option :value="item" v-for="item in locations" v-if="">{{item}}</option>
             </select>
+            </div>
         </div>
+
         <div class="row">
-            <div class="col-sm-6" v-for="item in filterData[currentPage]">
+            <div class="col-sm-6 item" v-for="item in filterData[currentPage]">
 
                 <h4>{{item.name}}</h4>
-                <li>區別 : {{item.area}}</li>
-                <li>地址 : {{item.address}}</li>
-                <li>計時：{{item.payex}}</li>
-                <li>營業時間：{{item.serviceTime}}</li>
+                <li> <span class="icon locat"><i class="fas fa-map-pin"></i>&nbsp;&nbsp;</span><span class="title">區別 :</span> {{item.area}}</li>
+                <li> <span class="icon addr"><i class="fas fa-map-marker-alt"></i></span> <span class="title">地址 :</span> {{item.address}}</li>
+                <li> <span class="icon time"><i class="fas fa-clock"></i></span> <span class="title">營業時間：</span>{{item.serviceTime}}</li>
+                <li> <span class="icon cost"><i class="fas fa-dollar-sign"></i></span> <span class="title">計時：</span>{{item.payex}}</li>
                 <br>
                 <!-- <pre>
                     {{item}}
@@ -50,13 +53,7 @@
                     </li>
                 </ul>
             </nav>
-            <!-- <nav aria-label="Page navigation example">
-                <ul>
-                    <li class="page-item" v-for="page in filterData.length">
-                        <a href="" class="page-link">{{page}}</a>
-                    </li>
-                </ul>
-            </nav> -->
+
         </div>
     </div>
 
