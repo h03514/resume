@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="description" content="在台北停車一位難求，靠台北停車資訊網輕鬆幫你找到鄰近的停車場、停車塔。節省你的時間，讓你不必費神又費時再找車位。" />
+    <title>Taipei Parking 台北停車資訊網</title>
     <script src="js/TCMSV_alldesc.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script> -->
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js'></script> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' />
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/parking.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js'></script>
 
@@ -21,6 +22,7 @@
 <body>
     <div id="taipeiParking" class="container">
         <div class="header">
+            <h1>台北停車資訊網</h1>
             <div id="sel">
                 <select name="" class="form-control" v-model="current">
                     <option :value="item" v-for="item in locations" v-if="">{{item}}</option>
