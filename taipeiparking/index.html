@@ -23,7 +23,6 @@
         <div class="header">
             <div id="sel">
                 <select name="" class="form-control" v-model="current">
-                    <option value="">-- 全部 --</option>
                     <option :value="item" v-for="item in locations" v-if="">{{item}}</option>
                 </select>
             </div>
@@ -76,9 +75,9 @@
                     items.push(tparking.data.park[i]);
                 }
                 vm.locations = items;
+
                 vm.getUniqueList();
                 vm.getLocation();
-
             },
             methods: {
                 getUniqueList() {
@@ -86,9 +85,14 @@
 
                     const vm = this;
                     vm.locations.forEach((item, i) => {
+                        if (item.area == '松山' || item.area == '內湖' || item.area == '文山' || item.area ==
+                            '中山') {
+                            return;
+                        }
                         locations.add(item.area);
                     });
                     vm.locations = Array.from(locations);
+                    this.current = vm.locations[0];
                 },
                 getLocation() {
                     const locations = new Set();
@@ -100,7 +104,8 @@
                             vm.tpPark.push(item);
                         });
                     }
-                }
+                },
+
             },
             computed: {
                 filterData() {
@@ -115,13 +120,15 @@
                     }
 
                     const newData = [];
+                    let num = 0;
                     items.forEach((item, i) => {
-                        if (i % 45 === 0) {
+                        if (i % 20 === 0) {
                             newData.push([]);
                         }
-                        const page = parseInt(i / 45);
+                        const page = parseInt(i / 20);
                         newData[page].push(item);
                     })
+
                     return newData;
                 }
             }
