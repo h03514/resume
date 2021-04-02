@@ -1,0 +1,125 @@
+$white: #f2f2f2;
+
+.lightBox {
+  .boxMod {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 255px;
+    margin: 16px 15px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: box-shadow 1s;
+    .imgDiv {
+      display: inline-flex;
+      width: 100%;
+      background-repeat: none;
+      background-size: cover;
+      background-position: center;
+      transition: transform 1s;
+      img {
+        width: 100%;
+      }
+    }
+    .imgDiv:hover {
+      width: 110%;
+      box-shadow: 8px 8px 0 #000;
+      transform: scale(1.2);
+    }
+  }
+}
+.modalBox {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  .boxContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 0 20px;
+    .boxTextContent {
+      position: relative;
+      width: 15%;
+      height: 55%;
+      max-width: 320px;
+      min-width: 250px;
+      font-size: 30px;
+      .number {
+        .one {
+          display: inline-flex;
+          font-size: 2.5em;
+          font-weight: bold;
+          margin-top: -8px;
+        }
+        .two {
+        }
+      }
+      .text {
+        color: $white;
+        position: absolute;
+        bottom: 15px;
+        p {
+          margin-top: 15px;
+          font-size: 0.65em;
+        }
+      }
+    }
+    .boxImgContent {
+      position: relative;
+      width: 50%;
+      height: 55%;
+      max-width: 820px;
+      min-width: 420px;
+      left: 5%;
+      border: 12px solid $white;
+      border-radius: 5px;
+      // background-image: url("../img/guitar-1245856_1280.jpg");
+      a {
+        position: absolute;
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        justify-content: center;
+        font-size: 30px;
+        color: $white;
+        text-decoration: none;
+      }
+      .close {
+        top: 2px;
+        right: 2px;
+      }
+      .right {
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(172, 172, 172);
+      }
+      .left {
+        left: 2px;
+        top: 50%;
+        color: rgb(172, 172, 172);
+        transform: translateY(-50%);
+      }
+      .close:hover {
+        color: #fff;
+      }
+      .right:hover,
+      .left:hover {
+        color: $white;
+        transition: 0.3s;
+      }
+    }
+  }
+}
