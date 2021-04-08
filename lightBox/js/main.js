@@ -19,6 +19,7 @@ window.onload = function() {
                 imgList: imgAry,
                 modal: false,
                 currentImgIndex: 0,
+                currentTest: 0,
             };
         },
         computed: {
