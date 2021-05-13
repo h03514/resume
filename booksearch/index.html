@@ -17,7 +17,7 @@
     <main id="booksearch">
         <div class="container">
             <h3 class="mt-5">找書趣</h3>
-            <div class="form-inline ">
+            <div class="form-inline">
                 <p>{{subTitle}}</p>
                 <input class="form-control box_shadow" type="text" v-model.trim="searchBookName" placeholder="請輸入想查詢的書籍" /> &nbsp;
                 <button class="btn btn-primary box_shadow" @click="search">開始搜尋</button>
@@ -27,10 +27,14 @@
                     <li v-for="(item,index) in bookAry.items" class="mt-4 form-inline listMenu">
                         <img :src="item.volumeInfo.imageLinks.smallThumbnail" alt="" />
                         <div class="content">
-                            <p>&nbsp;{{item.volumeInfo.title}}</p>
-                            <p>&nbsp;出版社 : {{ item.volumeInfo.publisher}}</p>
+                            <p v-if="item.volumeInfo.title !== undefined">&nbsp;{{item.volumeInfo.title}}</p>
+                            <p v-if="item.volumeInfo.authors !== undefined">
+                                &nbsp;作者 : {{ item.volumeInfo.authors[0]}}
+                            </p>
+                            <p v-if="item.volumeInfo.publisher !== undefined">
+                                &nbsp;出版社 : {{ item.volumeInfo.publisher}}
+                            </p>
                         </div>
-                        <p v-if="item.volumeInfo.authors !== undefined">作者 : {{ item.volumeInfo.authors[0]}}</p>
                     </li>
                 </ul>
             </div>
