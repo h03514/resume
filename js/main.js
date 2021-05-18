@@ -16,6 +16,7 @@ let vm = new Vue({
         protfoImg2: '../img/map.jpg',
         protfoImg3: '../img/weather.jpg',
         protfoImg4: '../img/tpparking.jpg',
+        protfoImg5: '../img/booksearch.jpg'
     },
     methods: {
         introText: function() {},
