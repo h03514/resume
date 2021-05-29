@@ -11,7 +11,7 @@ function cityIf(city) {
         res = '基隆市';
     }
     if (city == 'taipei_x5F_city') {
-        res = '臺北市';
+        res = '台北市';
     }
     if (city == 'taoyuan_x5F_country') {
         res = '桃園市';
@@ -82,32 +82,43 @@ function cityIf(city) {
     return res;
 }
 
+
+
 const vm = Vue.createApp({
     data() {
         return {
-            covidData: '',
-            ddd: 'test111'
+            covidData: [],
+            cityName: ''
         }
     },
-
     methods: {
         city() {
-            let url = 'https://cors-anywhere.herokuapp.com/https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json'
-            axios.get('https://cors-anywhere.herokuapp.com/https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json')
+            axios.get('https://mark-proxy-server-php.herokuapp.com/covid19.php')
                 .then(res => {
                     this.covidData = res.data;
-                    console.log(this.covidData);
-
                 }),
                 ((error) => {
-
+                    console.log(error);
                 })
         },
-        test() {
-            console.log('aaa');
+
+    },
+    created: function() {
+        this.city();
+    },
+    computed: {
+        subtotal: {
+            get() {
+
+            },
+            set(e) {
+                console.log(e);
+            }
         }
     }
-})
+});
+
+
 
 vm.mount('#app');
 
@@ -135,4 +146,4 @@ vm.mount('#app');
 //         cslog(da);
 //         cslog('ddd')
 //     }
-// });
+// });s

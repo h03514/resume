@@ -94,7 +94,6 @@ function weatherHandler(da) {
         let cityName = $(this).attr('id');
         for (let i in data.location) {
             if (cityIf(cityName) == data.location[i].locationName) {
-                console.log(data.location[i]);
                 $('.area').html(data.location[i].locationName);
                 $('.date').html(subStringTime(data.location[i].weatherElement[0].time[0].startTime));
                 $('.temperature').html(
