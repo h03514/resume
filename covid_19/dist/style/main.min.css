@@ -1,2 +1,2 @@
-body{background-color:#222}body path{stroke:white;fill:transparent;-webkit-transition:0.5s;transition:0.5s;cursor:pointer}body path:hover{fill:#b99362;-webkit-transform:translate(-5px, -5px);transform:translate(-5px, -5px)}body .covidList{position:absolute;top:40px;left:10px;overflow:auto;height:500px;width:360px}
+body{background-color:#222}body main h2{color:#f2f2f2;text-align:center;padding:10px 0}body main path{stroke:white;fill:transparent;-webkit-transition:0.5s;transition:0.5s;cursor:pointer}body main path:hover{fill:#b99362;-webkit-transform:translate(-5px, -5px);transform:translate(-5px, -5px)}body main .covidList{position:absolute;top:40px;left:10px;overflow:auto;height:500px;width:360px}
 /*# sourceMappingURL=main.min.css.map */
