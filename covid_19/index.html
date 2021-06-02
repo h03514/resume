@@ -22,7 +22,7 @@
         <div id="app" class="container">
             <svg version="1.1" id="svg2600" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:docname="Taiwan_ROC_political_division_map_Taitung County.svg" inkscape:version="0.47 r22583" sodipodi:version="0.32"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px" height="900px" viewBox="-160 0 850 1200" style="enable-background: new 0 0 850 1200" xml:space="preserve">
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px" height="870px" viewBox="-160 0 850 1200" style="enable-background: new 0 0 850 1200" xml:space="preserve">
                     <style type="text/css">
                         <![CDATA[
                         .st0 {
@@ -982,7 +982,7 @@
                 </svg>
 
             <div class="row covidList" style="color: #f2f2f2">
-                <table>
+                <!-- <table>
                     <thead>
                         <th>研判發病日:</th>
                         <th>縣市</th>
@@ -1002,16 +1002,32 @@
                         <td>{{person.性別}}</td>
                         <td>{{person.年齡層}}</td>
                     </tr>
-                </script>
-
+                </script> -->
+                <div class="position-relative">
+                    <div class="row sticky-top dataHeader">
+                        <div>2021年 {{taiwanCity}} 累積人數: {{covidTotalCount}}</div>
+                        <div class="col-md-3">個案研判日:</div>
+                        <div class="col-md">性別:</div>
+                        <div class="col-md">年齡層:</div>
+                        <div class="col-md">縣市:</div>
+                        <div class="col-md">鄉鎮:</div>
+                    </div>
+                    <div class="row" v-for="(item,index) in covidData">
+                        <div class="col-md-3">{{item.個案研判日}}</div>
+                        <div class="col-md">{{item.性別}}</div>
+                        <div class="col-md">{{item.年齡層}}</div>
+                        <div class="col-md">{{item.縣市}}</div>
+                        <div class="col-md">{{item.鄉鎮}}</div>
+                    </div>
+                </div>
                 <!-- <ul>
-            <li v-for="(item,index) in covidData">
-              <span>{{item.個案研判日}}</span>&nbsp;&nbsp;
-              <span>{{item.縣市}}</span>&nbsp;&nbsp;
-              <span>{{item.性別}}</span>&nbsp;&nbsp;
-              <span>{{item.年齡層}}</span>&nbsp;&nbsp;
-            </li>
-          </ul> -->
+                    <li v-for="(item,index) in covidData">
+                        <span>{{item.個案研判日}}</span>&nbsp;&nbsp;
+                        <span>{{item.縣市}}</span>&nbsp;&nbsp;
+                        <span>{{item.性別}}</span>&nbsp;&nbsp;
+                        <span>{{item.年齡層}}</span>&nbsp;&nbsp;
+                    </li>
+                </ul> -->
             </div>
         </div>
     </main>
