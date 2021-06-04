@@ -1,0 +1,80 @@
+body {
+    background-color: #222;
+    main {
+        h2 {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px 0;
+        }
+        path {
+            stroke: white;
+            fill: transparent;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        path:hover {
+            fill: #b99362;
+            transform: translate(-5px, -5px);
+        }
+        .covidList {
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            overflow: auto;
+            height: 500px;
+            width: 500px;
+            .dataHeader {
+                background-color: #222;
+                color: #f2f2f2;
+                font-size: 18px;
+                font-weight: 1000;
+            }
+        }
+    }
+    @media screen and (max-width: 1366px) {
+        main {
+            svg {
+                height: 580px;
+            }
+            .covidList {
+                height: 545px;
+                width: 455px;
+                .dataHeader {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1280px) {
+        main {
+            svg {
+                margin-left: 25px;
+            }
+        }
+    }
+     ::-webkit-scrollbar {
+        width: 20px;
+    }
+     ::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid #ccc;
+    }
+     ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(left, #fff, #e4e4e4);
+        border: 1px solid #aaa;
+    }
+     ::-webkit-scrollbar-thumb:hover {
+        background: #fff;
+    }
+     ::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(left, #22ADD4, #1E98BA);
+    }
+    .st0 {
+        fill: dimgrey !important;
+        stroke: #262121 !important;
+        stroke-miterlimit: 10 !important;
+    }
+}
