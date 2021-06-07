@@ -86,38 +86,57 @@ const vm = Vue.createApp({
     data() {
         return {
             covidData: [],
+            taiwanData: [],
             covidTotalCount: 0,
             cityName: "",
-            taiwanCity: ''
+            taiwanCity: '',
+            country: {},
         };
     },
-
+    created() {
+        axios
+            .get("https://mark-proxy-server-php.herokuapp.com/covid19.php")
+            .then((res) => {
+                this.taiwanData = res.data;
+            }),
+            (error) => {
+                console.log(error);
+            };
+    },
     methods: {
         city(e) {
             this.cityName = e.path[0].id;
-            axios
-                .get("https://mark-proxy-server-php.herokuapp.com/covid19.php")
-                .then((res) => {
-                    this.covidData = [];
-                    let num = 0;
-                    for (let i in res.data) {
-                        if (
-                            res.data[i].縣市 == cityIf(this.cityName) &&
-                            res.data[i].個案研判日.substring(0, 4) != "2020"
-                        ) {
-                            this.covidData.push(res.data[i]);
-                            num++;
-                        }
-                        this.covidTotalCount = num;
-                        this.taiwanCity = cityIf(this.cityName);
-                        console.log(this.covidTotalCount);
-                    }
-
-                }),
-                (error) => {
-                    console.log(error);
-                };
+            let num = 0;
+            this.covidData = [];
+            for (let i in this.taiwanData) {
+                if (
+                    this.taiwanData[i].縣市 == cityIf(this.cityName) &&
+                    this.taiwanData[i].個案研判日.substring(0, 4) != "2020"
+                ) {
+                    this.covidData.push(this.taiwanData[i]);
+                    num++;
+                }
+                this.covidTotalCount = num;
+                this.taiwanCity = cityIf(this.cityName);
+            }
         },
+        test() {
+            let num = 0;
+            let obj = {};
+            let ary = [];
+            for (let i in this.covidData) {
+                for (let j in this.covidData[i]) {
+                    if (j == '鄉鎮') {
+                        ary.push(this.covidData[i][j]);
+                    }
+                }
+            }
+            ary.forEach(function(item) {
+                obj[item] = obj[item] ? obj[item] + 1 : 1;
+            });
+            this.country = obj;
+            cslog(this.country);
+        }
     },
 });
 
@@ -127,27 +146,3 @@ vm.component("row-component", {
 });
 
 vm.mount("#app");
-
-// let ref = {
-//     url: 'https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json',
-//     type: 'get',
-//     dataType: 'json'
-// };
-// AjaxJson(ref, '', ddd);
-
-// function ddd(da) {
-//     cslog(da)
-// }
-
-// $.ajax({
-//     type: "GET",
-//     url: "https://od.cdc.gov.tw/eic/Weekly_Age_County_Gender_19CoV.json",
-//     dataType: "json",
-//     success: function(data) {
-//         cslog(data)
-//     },
-//     error: function(da) {
-//         cslog(da);
-//         cslog('ddd')
-//     }
-// });s
