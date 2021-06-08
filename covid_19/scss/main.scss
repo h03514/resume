@@ -1,6 +1,14 @@
 body {
-    background-color: #222;
+    header {
+        background-color: #222;
+        padding: 10px;
+        font-size: 1.2em;
+        a {
+            text-decoration: none;
+        }
+    }
     main {
+        background-color: #3c3c3c;
         h2 {
             color: #f2f2f2;
             text-align: center;
@@ -24,7 +32,7 @@ body {
             height: 500px;
             width: 500px;
             .dataHeader {
-                background-color: #222;
+                background-color: #3c3c3c;
                 color: #4886e2;
                 font-size: 18px;
                 font-weight: 1000;
@@ -40,7 +48,7 @@ body {
             width: 250px;
             color: #f2f2f2;
             .dataHeader {
-                background-color: #222;
+                background-color: #3c3c3c;
                 color: #4886e2;
                 font-size: 18px;
                 font-weight: 1000;
@@ -50,15 +58,19 @@ body {
     @media screen and (max-width: 1366px) {
         main {
             svg {
-                height: 580px;
+                height: 510px;
             }
             .covidList {
+                top: 48px;
                 height: 545px;
                 width: 455px;
                 .dataHeader {
                     font-size: 16px;
                     font-weight: 700;
                 }
+            }
+            .country {
+                top: 48px;
             }
         }
     }
