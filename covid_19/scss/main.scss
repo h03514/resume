@@ -5,6 +5,18 @@ body {
         font-size: 1.2em;
         a {
             text-decoration: none;
+            color: #ff4141;
+        }
+        a:hover {
+            transition: 0.3s;
+            color: #d46a6a;
+        }
+        h2 {
+            position: absolute;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            color: #f2f2f2;
+            font-size: 1.2em;
         }
     }
     main {
@@ -58,7 +70,7 @@ body {
     @media screen and (max-width: 1366px) {
         main {
             svg {
-                height: 510px;
+                height: 577px;
             }
             .covidList {
                 top: 48px;
