@@ -10,17 +10,31 @@
 
 <body>
 
-    <button>abc</button>
+    <button class="abc">abc</button>
+    <button class="def">ddd</button>
     <p class="result"></p>
+
     <script>
 
-        let shareData = {
-            title: 'Yahoo',
-            text: 'Yahoo',
-            url: 'https://tw.yahoo.com',
+
+        const shareData = {
+            title: 'MDN',
+            text: 'Learn web development on MDN!',
+            url: 'https://developer.mozilla.org'
         }
 
+        const btn = document.querySelector('.abc');
         const resultPara = document.querySelector('.result');
+
+        // Share must be triggered by "user activation"
+        btn.addEventListener('click', async () => {
+            try {
+                await navigator.share(shareData)
+                resultPara.textContent = 'MDN shared successfully'
+            } catch (err) {
+                resultPara.textContent = 'Error: ' + err
+            }
+        });
 
         if (!navigator.canShare) {
             resultPara.textContent = 'navigator.canShare() not supported.';
@@ -31,24 +45,23 @@
             resultPara.textContent = 'Specified data cannot be shared.';
         }
 
-        // const shareData = {
-        //     title: 'MDN',
-        //     text: 'Learn web development on MDN!',
-        //     url: 'https://developer.mozilla.org'
-        // }
 
-        // const btn = document.querySelector('button');
-        // const resultPara = document.querySelector('.result');
 
-        // // Share must be triggered by "user activation"
-        // btn.addEventListener('click', async () => {
-        //     try {
-        //         await navigator.share(shareData)
-        //         resultPara.textContent = 'MDN shared successfully'
-        //     } catch (err) {
-        //         resultPara.textContent = 'Error: ' + err
-        //     }
-        // });
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        mWebView.getSettings().setAppCacheEnabled(false);
+        mWebView.getSettings().setAllowFileAccess(true);
+        mWebView.getSettings().setAllowContentAccess(true);
+        mWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+
+        mWebView.addJavascriptInterface(new JavaScriptShareInterface(), "AndroidShareHandler");
+
+        let shareButton = document.querySelector('.def')
+
+        shareButton.addEventListener('click', () => {
+            window.AndroidShareHandler.share('https://tw.yahoo.com');
+        });
     </script>
 
 
