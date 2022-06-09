@@ -10,9 +10,27 @@
 
 <body>
 
-    <p>abcdefg</p>
-    <button class="redirectBtn">test webview</button>
+    <button class="abc">share</button>
+    <p class="result"></p>
+    <p class="result2"></p>
+    <input type="hidden" id="content-to-copy" />
     <script>
+
+
+        let ua = navigator.userAgent;
+        let android = ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1; // android
+        let iOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios
+        if (android == true) {
+            document.querySelector('.result2').innerHTML = '您的裝置是 Android';
+        } else if (iOS == true) {
+            document.querySelector('.result2').innerHTML = '您的裝置是 iOS';
+            document.location.href="222.html";
+        } else {
+            document.querySelector('.result2').innerHTML = '您目前非行動裝置';
+        }
+
+
+
 
 
         // 選擇和 DOM 有關的元素
@@ -34,8 +52,24 @@
             } else {
                 handleNotSupportNavigatorShare();
             }
-        });s
+        });
 
+        // 當瀏覽器支援 Web Share API 時
+        async function handleNavigatorShare() {
+            try {
+                await navigator.share(shareData);
+                result.textContent = '感謝你的的分享';
+            } catch (err) {
+                // 使用者拒絕分享或發生錯誤
+                const { name } = err;
+                if (name === 'AbortError') {
+                    result.textContent = '您已取消分享此訊息';
+                } else {
+                    result.textContent = err;
+                    console.log('發生錯誤', err);
+                }
+            }
+        }
 
         // 當瀏覽器不支援 Web Share API 時，點下去變成複製
         function handleNotSupportNavigatorShare() {
@@ -57,8 +91,9 @@
             window.getSelection().removeAllRanges();
         }
 
-        document.querySelector('.redirectBtn').click();
     </script>
+
+
 </body>
 
 </html>
