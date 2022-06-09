@@ -13,18 +13,20 @@
     <button class="abc">abc</button>
     <button class="def">ddd</button>
     <p class="result"></p>
-
+    <input type="hidden" id="content-to-copy" />
     <script>
 
 
-        const shareData = {
-            title: 'MDN',
-            text: 'UA21357',
-            url: 'https://tw.yahoo.com'
-        }
+        // 選擇和 DOM 有關的元素
+        const btn = document.querySelector('button');
+        const result = document.querySelector('.result');
 
-        const btn = document.querySelector('.abc');
-        const resultPara = document.querySelector('.result');
+        // 當使用者點擊分享時要帶入的資訊
+        const shareData = {
+            url: 'https://www.icashpay.com.tw/', // 要分享的 URL
+            title: 'Icash pay 7月活動', // 要分享的標題
+            text: 'UA21357', // 要分享的文字內容
+        };
 
         // Share must be triggered by "user activation"
         btn.addEventListener('click', () => {
