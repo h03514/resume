@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>abc</button>
+    <p class="result"></p>
+    <script>
+
+        let shareData = {
+            title: 'Yahoo',
+            text: 'Yahoo',
+            url: 'https://tw.yahoo.com',
+        }
+
+        const resultPara = document.querySelector('.result');
+
+        if (!navigator.canShare) {
+            resultPara.textContent = 'navigator.canShare() not supported.';
+        }
+        else if (navigator.canShare(shareData)) {
+            resultPara.textContent = 'navigator.canShare() supported. We can use navigator.share() to send the data.';
+        } else {
+            resultPara.textContent = 'Specified data cannot be shared.';
+        }
+
+        // const shareData = {
+        //     title: 'MDN',
+        //     text: 'Learn web development on MDN!',
+        //     url: 'https://developer.mozilla.org'
+        // }
+
+        // const btn = document.querySelector('button');
+        // const resultPara = document.querySelector('.result');
+
+        // // Share must be triggered by "user activation"
+        // btn.addEventListener('click', async () => {
+        //     try {
+        //         await navigator.share(shareData)
+        //         resultPara.textContent = 'MDN shared successfully'
+        //     } catch (err) {
+        //         resultPara.textContent = 'Error: ' + err
+        //     }
+        // });
+    </script>
+
+
+</body>
+
+</html>
