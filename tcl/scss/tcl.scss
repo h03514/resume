@@ -1,0 +1,74 @@
+body {
+    background-image: url("../img/background2.png");
+
+    #logo {
+        height: 180px;
+        margin-top: 50px;
+
+        .logo {
+            margin-top: 10px;
+            background-image: url("../img/logo.png");
+            background-repeat: no-repeat;
+        }
+    }
+
+    main {
+        margin-top: 100px;
+
+        .block {
+            margin: 30px 0;
+
+            .bgPhoto {
+                cursor: pointer;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .bgPhoto:hover{
+                color: #f55829;
+                transition: 0.3S;
+                transition-timing-function:ease-in-out;
+            }
+
+            .bgPhoto-1,
+            .bgPhoto-2,
+            .bgPhoto-3,
+            .bgPhoto-4,
+            .bgPhoto-5,
+            .bgPhoto-6 {
+                padding-left: 175px;
+                padding-top: 20px;
+
+                i {
+                    font-size: 7.5em;
+                    color: #00A29A;
+                }
+
+                p {
+                    font-size: 24px;
+                    margin-top: 15px;
+                }
+            }
+
+            .bgPhoto-2 {
+                padding: 25px 0 0 20px;
+            }
+
+            .bgPhoto-3 {
+                padding: 20px 135px 0 0;
+            }
+
+            .bgPhoto-4 {
+                padding-top: 75px;
+            }
+
+            .bgPhoto-5 {
+                padding: 75px 0px 0 25px;
+            }
+
+            .bgPhoto-6 {
+                padding: 75px 140px 0 0;
+            }
+        }
+    }
+}
