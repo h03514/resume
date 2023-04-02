@@ -1,17 +1,33 @@
 body {
-  background-image: url("../img/background2.png");
+  background-image: url("../img/background.png");
 }
-body #logo {
-  height: 180px;
-  margin-top: 50px;
-}
-body #logo .logo {
-  margin-top: 10px;
-  background-image: url("../img/logo.png");
+body .logo {
   background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 10px;
+}
+body .logo img {
+  max-width: 100%;
+}
+@media screen and (min-width: 1366px) {
+  body .logo {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 1365px) {
+  body {
+    margin-top: 10px;
+  }
 }
 body main {
-  margin-top: 100px;
+  margin-top: 50px;
+}
+@media screen and (max-width: 1366px) {
+  body main {
+    margin-top: 10px;
+  }
 }
 body main .block {
   margin: 30px 0;
@@ -32,8 +48,23 @@ body main .block .bgPhoto-3,
 body main .block .bgPhoto-4,
 body main .block .bgPhoto-5,
 body main .block .bgPhoto-6 {
-  padding-left: 175px;
-  padding-top: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  padding: 0;
+}
+@media screen and (max-width: 1366px) {
+  body main .block .bgPhoto-1,
+  body main .block .bgPhoto-2,
+  body main .block .bgPhoto-3,
+  body main .block .bgPhoto-4,
+  body main .block .bgPhoto-5,
+  body main .block .bgPhoto-6 {
+    width: 220px;
+    height: 220px;
+  }
 }
 body main .block .bgPhoto-1 i,
 body main .block .bgPhoto-2 i,
@@ -42,7 +73,19 @@ body main .block .bgPhoto-4 i,
 body main .block .bgPhoto-5 i,
 body main .block .bgPhoto-6 i {
   font-size: 7.5em;
+  margin-top: 45px;
   color: #00A29A;
+}
+@media screen and (max-width: 1366px) {
+  body main .block .bgPhoto-1 i,
+  body main .block .bgPhoto-2 i,
+  body main .block .bgPhoto-3 i,
+  body main .block .bgPhoto-4 i,
+  body main .block .bgPhoto-5 i,
+  body main .block .bgPhoto-6 i {
+    font-size: 5.5em;
+    margin-top: 30px;
+  }
 }
 body main .block .bgPhoto-1 p,
 body main .block .bgPhoto-2 p,
@@ -53,18 +96,23 @@ body main .block .bgPhoto-6 p {
   font-size: 24px;
   margin-top: 15px;
 }
-body main .block .bgPhoto-2 {
-  padding: 25px 0 0 20px;
+@media screen and (max-width: 1366px) {
+  body main .block .bgPhoto-1 p,
+  body main .block .bgPhoto-2 p,
+  body main .block .bgPhoto-3 p,
+  body main .block .bgPhoto-4 p,
+  body main .block .bgPhoto-5 p,
+  body main .block .bgPhoto-6 p {
+    font-size: 22px;
+  }
 }
-body main .block .bgPhoto-3 {
-  padding: 20px 135px 0 0;
+@media screen and (max-width: 475px) {
+  body .computer {
+    display: none;
+  }
 }
-body main .block .bgPhoto-4 {
-  padding-top: 75px;
-}
-body main .block .bgPhoto-5 {
-  padding: 75px 0px 0 25px;
-}
-body main .block .bgPhoto-6 {
-  padding: 75px 140px 0 0;
+@media screen and (max-width: 475px) {
+  body .mobile {
+    display: block;
+  }
 }/*# sourceMappingURL=tcl.css.map */

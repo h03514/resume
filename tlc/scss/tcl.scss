@@ -1,19 +1,37 @@
 body {
-    background-image: url("../img/background2.png");
+    background-image: url("../img/background.png");
 
-    #logo {
-        height: 180px;
-        margin-top: 50px;
 
-        .logo {
-            margin-top: 10px;
-            background-image: url("../img/logo.png");
-            background-repeat: no-repeat;
+    .logo {
+        // background-image: url("../img/logo.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-top: 10px;
+
+        img {
+            max-width: 100%;
         }
     }
 
+    @media screen and (min-width: 1366px) {
+        .logo {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+        }
+    }
+
+    @media screen and (max-width: 1365px) {
+        margin-top: 10px;
+    }
+
     main {
-        margin-top: 100px;
+        margin-top: 50px;
+
+        @media screen and (max-width: 1366px) {
+            margin-top: 10px;
+        }
+       
 
         .block {
             margin: 30px 0;
@@ -24,11 +42,12 @@ body {
                 font-weight: bold;
             }
 
-            .bgPhoto:hover{
+            .bgPhoto:hover {
                 color: #f55829;
                 transition: 0.3S;
-                transition-timing-function:ease-in-out;
+                transition-timing-function: ease-in-out;
             }
+
 
             .bgPhoto-1,
             .bgPhoto-2,
@@ -36,39 +55,51 @@ body {
             .bgPhoto-4,
             .bgPhoto-5,
             .bgPhoto-6 {
-                padding-left: 175px;
-                padding-top: 20px;
+                background: white;
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+                padding: 0;
+
+                @media screen and (max-width: 1366px) {
+                    width: 220px;
+                    height: 220px;
+                }
 
                 i {
                     font-size: 7.5em;
+                    margin-top: 45px;
                     color: #00A29A;
+
+                    @media screen and (max-width: 1366px) {
+                        font-size: 5.5em;
+                        margin-top: 30px;
+                    }
                 }
+
 
                 p {
                     font-size: 24px;
                     margin-top: 15px;
+
+                    @media screen and (max-width: 1366px) {
+                        font-size: 22px;
+                    }
                 }
-            }
-
-            .bgPhoto-2 {
-                padding: 25px 0 0 20px;
-            }
-
-            .bgPhoto-3 {
-                padding: 20px 135px 0 0;
-            }
-
-            .bgPhoto-4 {
-                padding-top: 75px;
-            }
-
-            .bgPhoto-5 {
-                padding: 75px 0px 0 25px;
-            }
-
-            .bgPhoto-6 {
-                padding: 75px 140px 0 0;
             }
         }
     }
+
+    .computer{
+        @media screen and (max-width: 475px) {
+            display: none;
+        }
+    }
+    .mobile{
+        @media screen and (max-width: 475px) {
+            display: block;
+        }
+    }
+
 }
