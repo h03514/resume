@@ -48,7 +48,7 @@ body main .block .bgPhoto-3,
 body main .block .bgPhoto-4,
 body main .block .bgPhoto-5,
 body main .block .bgPhoto-6 {
-  background: white;
+  background: #f2f2f2;
   border-radius: 50%;
   width: 300px;
   height: 300px;
@@ -111,8 +111,42 @@ body main .block .bgPhoto-6 p {
     display: none;
   }
 }
+@media screen and (min-width: 476px) {
+  body .mobile {
+    display: none;
+  }
+}
 @media screen and (max-width: 475px) {
   body .mobile {
     display: block;
   }
+}
+body .mobile .row-mobile {
+  display: flex;
+  margin-top: 50px;
+}
+body .mobile .row-mobile .col-mobile {
+  width: 33.3333333333%;
+  font-size: 2.5em;
+  text-align: center;
+  background: #f2f2f2;
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  margin: 10px;
+}
+body .mobile .row-mobile .col-mobile i {
+  color: #00A29A;
+}
+body .mobile .row-mobile .col-mobile p {
+  font-size: 0.42em;
+  font-weight: 500;
+}
+body .mobile .row-mobile .col-mobile:hover {
+  color: #f55829;
+  transition: 0.3S;
+  transition-timing-function: ease-in-out;
+}
+body .mobile .public {
+  height: 180px;
 }/*# sourceMappingURL=tcl.css.map */

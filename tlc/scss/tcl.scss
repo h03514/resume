@@ -1,3 +1,6 @@
+$green: #00A29A;
+$white: #f2f2f2;
+
 body {
     background-image: url("../img/background.png");
 
@@ -31,7 +34,7 @@ body {
         @media screen and (max-width: 1366px) {
             margin-top: 10px;
         }
-       
+
 
         .block {
             margin: 30px 0;
@@ -55,7 +58,7 @@ body {
             .bgPhoto-4,
             .bgPhoto-5,
             .bgPhoto-6 {
-                background: white;
+                background: $white;
                 border-radius: 50%;
                 width: 300px;
                 height: 300px;
@@ -70,7 +73,7 @@ body {
                 i {
                     font-size: 7.5em;
                     margin-top: 45px;
-                    color: #00A29A;
+                    color: $green;
 
                     @media screen and (max-width: 1366px) {
                         font-size: 5.5em;
@@ -91,15 +94,57 @@ body {
         }
     }
 
-    .computer{
+    .computer {
         @media screen and (max-width: 475px) {
             display: none;
         }
     }
-    .mobile{
+
+    .mobile {
+        @media screen and (min-width: 476px) {
+            display: none;
+
+        }
+
         @media screen and (max-width: 475px) {
             display: block;
         }
+
+        .row-mobile {
+            display: flex;
+            margin-top: 50px;
+
+            .col-mobile {
+                width: calc(100%/3);
+                font-size: 2.5em;
+                text-align: center;
+                background: #f2f2f2;
+                border-radius: 50%;
+                height: 130px;
+                width: 130px;
+                margin: 10px;
+
+                i {
+                    color: $green;
+                }
+
+                p {
+                    font-size: 0.42em;
+                    font-weight: 500;
+                }
+            }
+
+            .col-mobile:hover {
+                color: #f55829;
+                transition: 0.3S;
+                transition-timing-function: ease-in-out;
+            }
+        }
+
+        .public {
+            height: 180px;
+        }
+
     }
 
 }
